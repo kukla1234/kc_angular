@@ -66,7 +66,7 @@ gulp.task('clean:tmp', function (cb) {
 });
 
 gulp.task('start:client', ['start:server', 'styles'], function () {
-  openURL('http://localhost:9000');
+  openURL('http://localhost:9001');
 });
 
 gulp.task('start:server', function() {
@@ -74,7 +74,7 @@ gulp.task('start:server', function() {
     root: [yeoman.app, '.tmp'],
     livereload: true,
     // Change this to '0.0.0.0' to access the server from outside.
-    port: 9000
+    port: 9001
   });
 });
 
@@ -82,7 +82,7 @@ gulp.task('start:server:test', function() {
   $.connect.server({
     root: ['test', yeoman.app, '.tmp'],
     livereload: true,
-    port: 9001
+    port: 9002
   });
 });
 
