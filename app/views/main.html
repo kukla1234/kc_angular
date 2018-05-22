@@ -1,8 +1,9 @@
-<img src="images/plane_background.jpg" class="bgimg" />
 <div class="sect aboutsect">
   <img src="../images/class.jpg">
   <div class="overlaymes">
-    <p>Here is what will go over the image.</p>
+    <h2>Welcome!</h2>
+    <p>Here is what will go over the image. Maybe I can include the purpose of this website.</p>
+    <a href="#!/about"><div class="pagebutton">More</div></a>
   </div>
 </div>
 <div class="sect worksect">
@@ -22,7 +23,70 @@
 <div class="sect honorsect">
   <h2>Honors and Awards</h2>
   <p>Something will go here but I have no idea what to put so once I decide on that, I will fix this section. In the meantime, here is a couple sentences of me blabbering on so that I can take up some space on this page.</p>
-
-
+  <br>
+  <a href="#"><div class="pagebutton">More</div></a>
+</div>
+<div class="sect slideshowsect">
+  <h2>Hobbies</h2>
+  <div class="slide">
+    <img class="mySlides" src="../images/plane_background.jpg">
+    <a href="#"><p>Photography</p></a>
+  </div>
+  <div class="slide">
+    <img class="mySlides" src="../images/class.jpg">
+    <a href="#"><p>Art</p></a>
+  </div>
+  <div class="slide">
+    <img class="mySlides" src="../images/plane_background.jpg">
+    <a href="#"><p>Crafting</p></a>
+  </div>
+  <button class="slidebutton prev" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="slidebutton next" onclick="plusDivs(+1)">&#10095;</button>
+  <div class="dots">
+    <span class="dot" onclick="currentDiv(1)"></span>
+    <span class="dot" onclick="currentDiv(2)"></span>
+    <span class="dot" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+<div class="sect contactsect">
+  <div class="contactgradient">
+    <h2>Contact Me</h2>
+    <p>Encouraging people to contact me, specifically for jobs.</p>
+    <br>
+    <a href="#"><div class="pagebutton">Get In Touch</div></a>
+  </div>
+  <div class="contactimg">
+    <img src="../images/self.jpg">
+  </div>
 </div>
 
+
+
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" current", "");
+    }
+    x[slideIndex-1].style.display = "block"; 
+    dots[slideIndex-1].className += " current";
+  }
+</script>
