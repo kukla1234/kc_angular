@@ -199,3 +199,14 @@ gulp.task('build', ['clean:dist'], function () {
 });
 
 gulp.task('default', ['build']);
+
+gulp.task('start:prod', ['start:server:prod', 'styles'], function () {});
+
+gulp.task('start:server:prod', function() {
+  $.connect.server({
+    root: [yeoman.app, '.tmp'],
+    livereload: false,
+    // Change this to '0.0.0.0' to access the server from outside.
+    port: 8081
+  });
+});

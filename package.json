@@ -20,14 +20,9 @@
     "gulp-useref": "^3.0.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
-    "jasmine-core": "^3.1.0",
     "jshint-stylish": "^1.0.0",
-    "karma": "^2.0.2",
-    "karma-jasmine": "^1.1.1",
-    "karma-phantomjs-launcher": "^1.0.4",
     "lazypipe": "^0.2.4",
     "open": "0.0.5",
-    "phantomjs-prebuilt": "^2.1.16",
     "rimraf": "^2.4.0",
     "run-sequence": "^1.1.1",
     "wiredep": "^2.2.2"
@@ -36,6 +31,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js"
+    "preinstall": "npm install -g gulp",
+    "start": "gulp start:prod"
   }
 }
